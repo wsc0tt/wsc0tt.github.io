@@ -1,6 +1,6 @@
 import './App.css'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Routes,
     Route
 } from 'react-router-dom'
@@ -14,22 +14,22 @@ import Contact from "./routes/contact.tsx";
 
 const App = () => {
 
-  return (
-    <Router>
-        <div className="flex flex-col w-full h-full justify-center items-center">
-            <Header />
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path ="/projects" element={<Projects />}/>
-                <Route path ="/resume" element={<Resume />}/>
-                <Route path ="/about" element={<About />}/>
-                <Route path ="/contact" element={<Contact />}/>
+    return (
+        <Router>
+            <div className="flex flex-col w-full h-full justify-center items-center">
+                <Header/>
+                <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/projects" element={<Projects/>}/>
+                    <Route path="/resume" element={<Resume/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
 
-            </Routes>
-      </div>
-    </Router>
-  )
+                </Routes>
+            </div>
+        </Router>
+    )
 }
 
 export default App

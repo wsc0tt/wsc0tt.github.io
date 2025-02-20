@@ -2,8 +2,6 @@ import DownloadButton from "../components/downloadButton.tsx";
 import PdfView from "../components/pdfView.tsx";
 import resume from "../assets/resume25.pdf";
 import {FaFileLines} from "react-icons/fa6";
-import React from "react";
-
 
 const Resume = () => {
     return (

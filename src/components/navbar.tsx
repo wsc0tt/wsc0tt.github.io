@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import {FaHouse, FaFolder, FaEnvelope, FaUser, FaFileLines} from "react-icons/fa6";
 import {useLocation} from "react-router-dom";
 
@@ -13,7 +13,7 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const getNavItemClass = (path) => {
+    const getNavItemClass = (path: string) => {
         const baseClass = "w-12 h-10 rounded-full flex items-center justify-center";
         return `${baseClass} ${
             location.pathname === path ? "text-spring" : "text-white"
