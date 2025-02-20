@@ -75,8 +75,8 @@ const Contact = () => {
                     form below!
                 </span>
                 <div className="flex flex-row space-x-6 mb-4 lg:mb-4 justify-center">
-                    <SocialButton link="https://www.linkedin.com/in/wscottdev/" icon={FaLinkedin} text="linkedin"/>
-                    <SocialButton link="https://discordapp.com/users/wsc0tt" icon={FaDiscord} text="discord"/>
+                    <SocialButton link="https://www.linkedin.com/in/wscottdev/" Icon={FaLinkedin} text="linkedin"/>
+                    <SocialButton link="https://discordapp.com/users/wsc0tt" Icon={FaDiscord} text="discord"/>
                 </div>
                 <form onSubmit={handleSubmit}>
 

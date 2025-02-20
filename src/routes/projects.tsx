@@ -10,7 +10,7 @@ const projects: string[] = [
 
 const Projects = () => {
 
-    const [option, setOption] = useState(projects[0])
+    const [option, setOption] = useState<string>(projects[0])
 
     return (
         <div className="max-w-screen-lg w-screen px-1">
@@ -27,6 +27,8 @@ const Projects = () => {
                     options={projects}
                     onSelect={setOption}
                 />
+
+                <span>{option}</span>
 
             </div>
         </div>
