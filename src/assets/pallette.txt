@@ -1,0 +1,6 @@
+/* CSS HEX */
+--coral: #ff8552ff;
+--byzantine-blue: #3454d1ff;
+--emerald: #26c485ff;
+--jet: #2d2e2eff;
+--white: #ffffffff;
