@@ -7,25 +7,11 @@ const Header = () => {
             <img
                 src={self}
                 alt="William Scott"
-                className="
-                        rounded-full
-                        w-24
-                        h-24
-                        md:w-32
-                        md:h-32
-                        lg:w-40
-                        lg:h-40
-                        ring-2
-                        ring-blue-700
-                        hover:ring-4
-                        transition-all
-                        duration-300
-                        object-cover
-                        drop-shadow-lg
-                        "
+                className="rounded-full w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ring-2 ring-blue-700
+                        hover:ring-4 transition-all duration-300 object-cover drop-shadow-lg"
             />
             <div className="flex flex-col items-center">
-                <span className="font-serif text-3xl leading-none md:text-7xl text-white">
+                <span className="font-serif text-3xl leading-none md:text-6xl text-white">
                     William Scott
                 </span>
                 <span

@@ -35,7 +35,7 @@ const Navbar = () => {
             ) : (
                 <ul className="flex justify-center items-center
                             rounded-full space-x-4 px-4 py-2 font-sans font-medium text-white
-                            shadow-2xl md:space-x-14 md:px-14 lg:space-x-20 lg:px-20 bg-gradient-to-r from-blue-700 to-blue-900">
+                            shadow-2xl md:space-x-14 md:px-14 lg:space-x-10 lg:px-20 bg-gradient-to-r from-blue-700 to-blue-900">
                     <li>
                         <Link to="/">home</Link>
                     </li>

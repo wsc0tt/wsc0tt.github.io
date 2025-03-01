@@ -70,7 +70,7 @@ const Contact = () => {
                 <span
                     className="py-4 px-4 mb-6 lg:mb-8 bg-blue-800 shadow-md font-sans
                                 text-white text-lg lg: text-xl text-center">
-                    to get in touch, please send me a
+                    To get in touch, please send me a
                     message on linkedin, discord, or using the
                     form below!
                 </span>
