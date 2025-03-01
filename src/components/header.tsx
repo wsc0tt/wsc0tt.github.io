@@ -11,7 +11,7 @@ const Header = () => {
                         hover:ring-4 transition-all duration-300 object-cover drop-shadow-lg"
             />
             <div className="flex flex-col items-center">
-                <span className="font-serif text-3xl leading-none md:text-6xl text-white">
+                <span className="font-serif text-3xl leading-none md:text-4xl lg:text-6xl text-white">
                     William Scott
                 </span>
                 <span
