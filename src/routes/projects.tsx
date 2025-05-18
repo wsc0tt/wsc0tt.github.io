@@ -1,5 +1,4 @@
 import { FaFolderOpen } from 'react-icons/fa6'
-import Dropdown from '../components/dropdown'
 import { useState } from 'react'
 
 const projects: string[] = [
