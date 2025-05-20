@@ -1,44 +1,137 @@
 import { FaFolderOpen } from 'react-icons/fa6'
 import { useState } from 'react'
+import projectList from '../components/projectList'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import SocialButton from '../components/socialButton'
+import { FaGithub } from 'react-icons/fa6'
 
-const projects: string[] = [
-    'Mobile Medical',
-    'Portfolio Website',
-    'OpenGL Mine Sweeper Game',
-]
+interface Project {
+    id: number
+    title: string
+    description: string
+    imagesDir: string
+    images: string[]
+    stack: string[]
+    link?: string
+    files?: string
+}
+
+// ProjectDetails component for cleaner separation
+const ProjectDetails = ({ project }: { project: Project }) => {
+    const settings = {
+        dots: true,
+        fade: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        waitForAnimate: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        cssEase: 'linear',
+    }
+
+    return (
+        <>
+            {/* Changed bg color to solid blue instead of gradient to avoid overlay effect */}
+            <div className='text-center text-xl font-medium bg-blue-800 py-4'>
+                {project.title}
+            </div>
+
+            <div className='w-full px-10 pb-6 pt-4'>
+                {project.images.length > 0 && (
+                    <Slider {...settings}>
+                        {project.images.map((image, index) => (
+                            <div key={index}>
+                                <div className='flex justify-center items-center'>
+                                    <div className='max-h-[500px] max-w-[500px]'>
+                                        <img
+                                            src={`${project.imagesDir}/${image}`}
+                                            alt={`${project.title} - ${
+                                                index + 1
+                                            }`}
+                                            className='w-full max-h-[500px] rounded-lg shadow-lg object-contain'
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                )}
+            </div>
+
+            <div className='text-center text-md pt-2 text-white'>
+                Technologies: {project.stack.join(', ')}
+            </div>
+            <div className='flex flex-row items-center justify-center space-x-4 pt-2'>
+                {project.files && (
+                    <SocialButton
+                        link={project.files}
+                        Icon={FaGithub}
+                        text='github'
+                    />
+                )}
+            </div>
+        </>
+    )
+}
+
+// Placeholder component when no project is selected
+const ProjectPlaceholder = () => {
+    return (
+        <div className='text-center text-xl font-medium bg-blue-800 py-4 w-full'>
+            Select a project
+        </div>
+    )
+}
 
 const Projects = () => {
-    const [option, setOption] = useState<string>(projects[0])
+    const [selectedProj, setSelectedProj] = useState<Project | null>(null)
 
     return (
         <div className='max-w-screen-lg w-screen px-2'>
-            <div className='px-3 py-4 rounded-t-2xl bg-gradient-to-r from-blue-500 to-blue-800'>
-                <div className='flex items-center space-x-3 justify-center mb-4'>
-                    <span className='font-serif text-2xl lg:text-3xl text-white'>
-                        projects
-                    </span>
-                    <FaFolderOpen className='w-8 h-8 text-spring' />
+            {/* Container for the entire component with NO background */}
+            <div className='rounded-2xl overflow-hidden shadow-lg'>
+                {' '}
+                {/* Wrapper with rounded corners */}
+                {/* Header section - keep gradient here */}
+                <div className='px-3 py-4 bg-gradient-to-r from-blue-500 to-blue-800'>
+                    <div className='flex items-center space-x-3 justify-center mb-4'>
+                        <span className='font-serif text-2xl lg:text-3xl text-white'>
+                            projects
+                        </span>
+                        <FaFolderOpen className='w-8 h-8 text-spring' />
+                    </div>
+                    <div className='grid grid-cols-3 gap-3 w-full font-sans text-sm'>
+                        {projectList.map((project) => (
+                            <button
+                                key={project.id}
+                                onClick={() => setSelectedProj(project)}
+                                className={`col-span-1 ${
+                                    selectedProj?.id === project.id
+                                        ? 'bg-blue-700'
+                                        : 'bg-blue-900 hover:bg-blue-800'
+                                } rounded-lg flex items-center justify-center p-2`}
+                            >
+                                {project.title}
+                            </button>
+                        ))}
+                    </div>
                 </div>
-                <div className='grid grid-cols-4 gap-3 w-full font-sans text-sm'>
-                    <button
-                        onClick={() => setOption(projects[0])}
-                        className='col-span-1 bg-blue-900 hover:bg-blue-800 rounded-lg flex items-center justify-center p-2'
-                    >
-                        {projects[0]}
-                    </button>
-                    <button className='col-span-1 bg-blue-900 hover:bg-blue-800 rounded-lg flex items-center justify-center p-2'>
-                        Sun Armor Ai
-                    </button>
-                    <button className='col-span-1 bg-blue-900 hover:bg-blue-800 rounded-lg flex items-center justify-center p-2'>
-                        Maritime Assign
-                    </button>
-                    <button className='col-span-1 bg-blue-900 hover:bg-blue-800 rounded-lg flex items-center justify-center p-2'>
-                        project1
-                    </button>
+                {/* Content section with SOLID background to prevent gradient overlay */}
+                <div className='bg-blue-600 font-sans flex flex-col py-4'>
+                    {selectedProj ? (
+                        <ProjectDetails project={selectedProj} />
+                    ) : (
+                        <ProjectPlaceholder />
+                    )}
                 </div>
+                {/* Custom footer gradient - separate from content section */}
+                <div className='bg-gradient-to-r from-blue-500 to-blue-800 h-5'></div>
             </div>
-            <div className='bg-blue-700'>{option}</div>
-            <div className='rounded-b-2xl bg-gradient-to-r from-blue-500 to-blue-800 h-10'></div>
         </div>
     )
 }
