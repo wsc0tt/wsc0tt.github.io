@@ -10,10 +10,10 @@ import { FaGithub } from 'react-icons/fa6'
 interface Project {
     id: number
     title: string
-    description: string
-    imagesDir: string
-    images: string[]
-    stack: string[]
+    description?: string
+    imagesDir?: string
+    images?: string[]
+    stack?: string[]
     link?: string
     files?: string
 }
@@ -42,29 +42,31 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             </div>
 
             <div className='w-full px-10 pb-6 pt-4'>
-                {project.images.length > 0 && (
-                    <Slider {...settings}>
-                        {project.images.map((image, index) => (
-                            <div key={index}>
-                                <div className='flex justify-center items-center'>
-                                    <div className='max-h-[500px] max-w-[500px]'>
-                                        <img
-                                            src={`${project.imagesDir}/${image}`}
-                                            alt={`${project.title} - ${
-                                                index + 1
-                                            }`}
-                                            className='w-full max-h-[500px] rounded-lg shadow-lg object-contain'
-                                        />
+                {project.images &&
+                    project.images.length > 0 &&
+                    project.imagesDir && (
+                        <Slider {...settings}>
+                            {project.images.map((image, index) => (
+                                <div key={index}>
+                                    <div className='flex justify-center items-center'>
+                                        <div className='max-h-[500px] max-w-[500px]'>
+                                            <img
+                                                src={`${project.imagesDir}/${image}`}
+                                                alt={`${project.title} - ${
+                                                    index + 1
+                                                }`}
+                                                className='w-full max-h-[500px] rounded-lg shadow-lg object-contain'
+                                            />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </Slider>
-                )}
+                            ))}
+                        </Slider>
+                    )}
             </div>
 
             <div className='text-center text-md pt-2 text-white'>
-                Technologies: {project.stack.join(', ')}
+                Technologies: {project.stack && project.stack.join(', ')}
             </div>
             <div className='flex flex-row items-center justify-center space-x-4 pt-2'>
                 {project.files && (
