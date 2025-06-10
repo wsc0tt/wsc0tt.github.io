@@ -57,6 +57,7 @@ const projectList = [
         imagesDir: 'gol',
         images: ['gameOfLife.png'],
         stack: ['Java', 'OpenGL', 'Swing'],
+        files: 'https://github.com/wsc0tt/GameOfLife',
     },
     {
         id: 5,
