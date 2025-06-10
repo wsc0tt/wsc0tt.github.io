@@ -47,7 +47,15 @@ const projectList = [
         title: 'Maritime Assign',
         description: 'Description for project three',
         imagesDir: 'ma',
-        images: [],
+        images: [
+            'login.png',
+            'forgot.png',
+            'dash.png',
+            'manage.png',
+            'add.png',
+            'board.png',
+            'users.png',
+        ],
         stack: ['React', 'Node.js', 'Vite', 'Docker', 'Supabase', 'JavaScript'],
     },
     {
