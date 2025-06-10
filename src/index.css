@@ -64,11 +64,11 @@ form {
 }
 
 form label {
-    @apply text-base md:text-lg lg:text-xl text-white text-left pl-2 lg:pl-4 font-sans mb-1;
+    @apply text-base md:text-lg lg:text-xl text-white text-left pl-5 font-sans lg:mb-1;
 }
 
 .form {
-    @apply font-sans mb-4 mt-1 mx-2 rounded-2xl py-4 pl-4 bg-white placeholder-neutral-600 text-neutral-800 text-base md:text-lg lg:text-xl outline-none focus:ring-2 focus:ring-blue-700;
+    @apply font-sans mb-4 mt-1 mx-3 rounded-2xl py-4 pl-4 bg-white placeholder-neutral-600 text-neutral-800 text-base md:text-lg lg:text-xl outline-none focus:ring-2 focus:ring-blue-700;
 }
 
 .icon {

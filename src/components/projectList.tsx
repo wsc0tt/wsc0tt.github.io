@@ -29,7 +29,7 @@ const projectList = [
         title: 'Sun Armor Ai',
         description: 'Description for project two',
         imagesDir: 'sa',
-        images: ['home.jpg'],
+        images: ['home.jpg', 'analysis.png'],
         stack: [
             'React',
             'Node.js',

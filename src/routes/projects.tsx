@@ -48,8 +48,8 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                         <Slider {...settings}>
                             {project.images.map((image, index) => (
                                 <div key={index}>
-                                    <div className='flex justify-center items-center'>
-                                        <div className='max-h-[500px] max-w-[500px]'>
+                                    <div className='flex justify-center'>
+                                        <div className='max-h-[500px] max-w-[500px] items-center justify-center'>
                                             <img
                                                 src={`${project.imagesDir}/${image}`}
                                                 alt={`${project.title} - ${
@@ -105,7 +105,7 @@ const Projects = () => {
                         <span className='font-serif text-2xl lg:text-3xl text-white'>
                             projects
                         </span>
-                        <FaFolderOpen className='w-8 h-8 text-spring' />
+                        <FaFolderOpen className='text-2xl lg:text-4xl text-spring' />
                     </div>
                     <div className='grid grid-cols-3 gap-3 w-full font-sans text-sm'>
                         {projectList.map((project) => (

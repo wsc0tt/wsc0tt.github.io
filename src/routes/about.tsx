@@ -12,11 +12,11 @@ const About = () => {
                 <span className='font-serif text-2xl lg:text-3xl text-white'>
                     about me
                 </span>
-                <FaUser className='w-8 h-8 text-spring' />
+                <FaUser className='text-2xl lg:text-4xl text-spring' />
             </div>
             <ImageWide src={collage} alt='mt. baker' />
             <div className='flex rounded-b-2xl bg-gradient-to-r from-blue-600 to-blue-900 p-6 items-center justify-center'>
-                <span className='font-sans font-light text-white text-center text-lg'>
+                <span className='font-sans font-light text-white text-center text-md lg:text-xl'>
                     I'm seeking my first software engineering role at a tech
                     company. I'm open to various specializations but want to
                     write clean, efficient code that makes an impact.
