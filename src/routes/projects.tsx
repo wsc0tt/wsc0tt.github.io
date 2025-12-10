@@ -16,6 +16,7 @@ interface Project {
     stack?: string[]
     link?: string
     files?: string
+    summary?: string
 }
 
 // ProjectDetails component for cleaner separation
@@ -66,9 +67,15 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             </div>
 
             <div className='text-center text-md pt-2 text-white'>
-                Technologies: {project.stack && project.stack.join(', ')}
+                <span className='text-lg'>
+                    Technologies: {project.stack && project.stack.join(', ')}
+                </span>
+                <br />
+                <div className='bg-blue-800 p-2 my-2 mx-2 rounded-lg'>
+                    {project.summary}
+                </div>
             </div>
-            <div className='flex flex-row items-center justify-center space-x-4 pt-2'>
+            <div className='flex flex-row items-center justify-center space-x-4'>
                 {project.files && (
                     <SocialButton
                         link={project.files}
@@ -95,7 +102,7 @@ const Projects = () => {
 
     return (
         <div className='max-w-screen-lg w-screen px-2'>
-            {/* Container for the entire component with NO background */}
+            {/* Container for the entire component with no background */}
             <div className='rounded-2xl overflow-hidden shadow-lg'>
                 {' '}
                 {/* Wrapper with rounded corners */}
@@ -107,7 +114,7 @@ const Projects = () => {
                         </span>
                         <FaFolderOpen className='text-2xl lg:text-4xl text-spring' />
                     </div>
-                    <div className='grid grid-cols-3 gap-3 w-full font-sans text-sm'>
+                    <div className='grid grid-cols-3 gap-3 w-full font-sans text-md'>
                         {projectList.map((project) => (
                             <button
                                 key={project.id}
@@ -123,7 +130,7 @@ const Projects = () => {
                         ))}
                     </div>
                 </div>
-                {/* Content section with SOLID background to prevent gradient overlay */}
+                {/* Content section with solid background to prevent gradient overlay */}
                 <div className='bg-blue-600 font-sans flex flex-col py-4'>
                     {selectedProj ? (
                         <ProjectDetails project={selectedProj} />

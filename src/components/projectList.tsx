@@ -23,6 +23,9 @@ const projectList = [
             'TypeScript',
         ],
         files: 'https://github.com/DreamTeam131/Medical-App',
+        summary:
+            'This project was my first exposure to Full-stack and mobile development, where I led a team of 6 other computer science students in creating a real product for a medical organization.' +
+            'The project was completed in 6 2-week sprints, working with evolving client requirements and feature requests. ',
     },
     {
         id: 2,

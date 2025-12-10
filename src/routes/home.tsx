@@ -15,8 +15,8 @@ const Home = () => {
                               shadow-2xl'
             >
                 <span className='font-sans font-light text-white text-lg lg:text-xl'>
-                    My name is William and I'm a Computer Science student @
-                    California State University, Sacramento. Stingers Up!🐝
+                    My name is William and I'm a Software Engineer specializing
+                    in Full-Stack development + AI/ML.
                 </span>
             </div>
 
@@ -36,8 +36,7 @@ const Home = () => {
                             shadow-2xl'
             >
                 <span className='font-sans font-light text-white text-lg lg:text-xl'>
-                    I'm actively seeking software engineering internship
-                    opportunities for Summer 2025.
+                    I'm actively seeking software engineer positions for 2026!
                 </span>
             </div>
 
