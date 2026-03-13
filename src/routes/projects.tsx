@@ -1,11 +1,7 @@
-import { FaFolderOpen } from 'react-icons/fa6'
-import { useState } from 'react'
+import { FaFolderOpen, FaGithub } from 'react-icons/fa6'
 import projectList from '../components/projectList'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import SocialButton from '../components/socialButton'
-import { FaGithub } from 'react-icons/fa6'
+import ImageCarousel from '../components/imageCarousel'
 
 interface Project {
     id: number
@@ -14,131 +10,83 @@ interface Project {
     imagesDir?: string
     images?: string[]
     stack?: string[]
-    link?: string
-    files?: string
-    summary?: string
+    github?: string
+    video?: string
 }
 
-// ProjectDetails component for cleaner separation
 const ProjectDetails = ({ project }: { project: Project }) => {
-    const settings = {
-        dots: true,
-        fade: true,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        waitForAnimate: true,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        cssEase: 'linear',
-    }
-
     return (
-        <>
-            {/* Changed bg color to solid blue instead of gradient to avoid overlay effect */}
-            <div className='text-center text-xl font-medium bg-blue-800 py-4'>
+        <div className='flex flex-col gap-2 px-6 py-4'>
+            <span className='text-2xl font-semibold text-white'>
                 {project.title}
-            </div>
+            </span>
 
-            <div className='w-full px-10 pb-6 pt-4'>
-                {project.images &&
-                    project.images.length > 0 &&
-                    project.imagesDir && (
-                        <Slider {...settings}>
-                            {project.images.map((image, index) => (
-                                <div key={index}>
-                                    <div className='flex justify-center'>
-                                        <div className='max-h-[500px] max-w-[500px] items-center justify-center'>
-                                            <img
-                                                src={`${project.imagesDir}/${image}`}
-                                                alt={`${project.title} - ${
-                                                    index + 1
-                                                }`}
-                                                className='w-full max-h-[500px] rounded-lg shadow-lg object-contain'
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                    )}
-            </div>
+            <span className='text-blue-100 text-md mb-2'>
+                {project.description}
+            </span>
 
-            <div className='text-center text-md pt-2 text-white'>
-                <span className='text-lg'>
-                    Technologies: {project.stack && project.stack.join(', ')}
-                </span>
-                <br />
-                <div className='bg-blue-800 p-2 my-2 mx-2 rounded-lg'>
-                    {project.summary}
+            {project.stack && (
+                <div className='flex flex-wrap gap-2'>
+                    {project.stack.map((tech) => (
+                        <span
+                            key={tech}
+                            className='bg-blue-900 text-blue-100 text-sm px-3 py-1 rounded-full'
+                        >
+                            {tech}
+                        </span>
+                    ))}
                 </div>
-            </div>
-            <div className='flex flex-row items-center justify-center space-x-4'>
-                {project.files && (
-                    <SocialButton
-                        link={project.files}
-                        Icon={FaGithub}
-                        text='github'
-                    />
-                )}
-            </div>
-        </>
-    )
-}
+            )}
 
-// Placeholder component when no project is selected
-const ProjectPlaceholder = () => {
-    return (
-        <div className='text-center text-xl font-medium bg-blue-800 py-4 w-full'>
-            Select a project
+            {project.video ? (
+                <div className='aspect-video w-full rounded-lg overflow-hidden my-2'>
+                    <iframe
+                        src={project.video}
+                        className='w-full h-full'
+                        allowFullScreen
+                    />
+                </div>
+            ) : project.images?.length ? (
+                <ImageCarousel
+                    images={project.images}
+                    imagesDir={project.imagesDir}
+                />
+            ) : (
+                <div className='w-full h-24 bg-blue-900 rounded-lg flex items-center justify-center text-blue-400 text-sm my-2'>
+                    demo coming soon
+                </div>
+            )}
+
+            {project.github && (
+                <SocialButton
+                    link={project.github}
+                    Icon={FaGithub}
+                    text='github'
+                />
+            )}
         </div>
     )
 }
 
 const Projects = () => {
-    const [selectedProj, setSelectedProj] = useState<Project | null>(null)
-
     return (
         <div className='max-w-screen-lg w-screen px-2'>
-            {/* Container for the entire component with no background */}
-            <div className='rounded-2xl overflow-hidden shadow-lg'>
-                {' '}
-                {/* Wrapper with rounded corners */}
-                {/* Header section - keep gradient here */}
+            <div className='rounded-2xl shadow-lg overflow-auto'>
                 <div className='px-3 py-4 bg-gradient-to-r from-blue-500 to-blue-800'>
-                    <div className='flex items-center space-x-3 justify-center mb-4'>
+                    <div className='flex items-center space-x-3 justify-center'>
                         <span className='font-serif text-2xl lg:text-3xl text-white'>
                             projects
                         </span>
                         <FaFolderOpen className='text-2xl lg:text-4xl text-spring' />
                     </div>
-                    <div className='grid grid-cols-3 gap-3 w-full font-sans text-md'>
-                        {projectList.map((project) => (
-                            <button
-                                key={project.id}
-                                onClick={() => setSelectedProj(project)}
-                                className={`col-span-1 ${
-                                    selectedProj?.id === project.id
-                                        ? 'bg-blue-700'
-                                        : 'bg-blue-900 hover:bg-blue-800'
-                                } rounded-lg flex items-center justify-center p-2`}
-                            >
-                                {project.title}
-                            </button>
-                        ))}
-                    </div>
                 </div>
-                {/* Content section with solid background to prevent gradient overlay */}
-                <div className='bg-blue-600 font-sans flex flex-col py-4'>
-                    {selectedProj ? (
-                        <ProjectDetails project={selectedProj} />
-                    ) : (
-                        <ProjectPlaceholder />
-                    )}
+
+                <div className='bg-blue-600 font-sans flex flex-col divide-y divide-blue-500'>
+                    {projectList.map((project) => (
+                        <ProjectDetails key={project.id} project={project} />
+                    ))}
                 </div>
-                {/* Custom footer gradient - separate from content section */}
+
                 <div className='bg-gradient-to-r from-blue-500 to-blue-800 h-5'></div>
             </div>
         </div>

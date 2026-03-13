@@ -1,8 +1,67 @@
 const projectList = [
     {
+        id: 3,
+        title: 'Maritime Assign',
+        description:
+            'Maritime Assign is a web-based job management platform built for the Marine Engineers’ Beneficial Association (MEBA) to replace their outdated Google Sheets-based job board. The application centralizes job listings, streamlines dispatch workflows, and provides secure role-based access for union members, dispatchers, and administrators. It was created to improve reliability, security, efficiency, and real-time visibility for a nationwide maritime job distribution system.',
+        imagesDir: 'ma',
+        images: [
+            'login.png',
+            'forgot.png',
+            'dash.png',
+            'manage.png',
+            'add.png',
+            'board.png',
+            'users.png',
+        ],
+        stack: [
+            'React',
+            'Node.js',
+            'Vite',
+            'Docker',
+            'Supabase',
+            'JavaScript',
+            'PostgreSQL',
+            'TailwindCSS',
+            'React Testing Library',
+            'Jest',
+            'Vitest',
+            'Formik',
+            'Cloudflare',
+        ],
+        github: 'https://github.com/Maritime-Assign/MEBA',
+        link: 'https://meba.pages.dev/',
+        video: 'https://www.youtube.com/embed/scoow5AcclU?si=BNqhlPdddotEk7Lm',
+    },
+    {
+        id: 2,
+        title: 'Sun Armor Ai',
+        description:
+            'A web app that uses convolutional neural networks to classify skin lesions from uploaded images. Trained on dermatology datasets using PyTorch and TensorFlow, with client-side inference for fast results. Built with React and TypeScript, and published open-source for developers and researchers.',
+        imagesDir: 'sa',
+        images: ['home.jpg', 'analysis.png'],
+        stack: [
+            'React',
+            'Node.js',
+            'Vite',
+            'PyTorch',
+            'TensorFlow',
+            'JavaScript',
+            'Python',
+            'ONNX',
+            'Tensorflow.js',
+            'HuggingFace',
+        ],
+        link: 'https://wsc0tt.github.io/SunArmorAi/',
+        github: 'https://github.com/wsc0tt/SunArmorAi',
+    },
+    {
         id: 1,
         title: 'Mobile Medical App',
-        description: 'Description for project one',
+        description:
+            'This project was my first exposure to Full-stack and mobile development, where I led a team of 6 other computer science students in creating a real product for a medical organization.' +
+            'The project was completed in 6 2-week sprints, working with evolving client requirements and feature requests. ',
+
         imagesDir: 'mma',
         images: [
             'landingPage.png',
@@ -22,44 +81,7 @@ const projectList = [
             'JavaScript',
             'TypeScript',
         ],
-        files: 'https://github.com/DreamTeam131/Medical-App',
-        summary:
-            'This project was my first exposure to Full-stack and mobile development, where I led a team of 6 other computer science students in creating a real product for a medical organization.' +
-            'The project was completed in 6 2-week sprints, working with evolving client requirements and feature requests. ',
-    },
-    {
-        id: 2,
-        title: 'Sun Armor Ai',
-        description: 'Description for project two',
-        imagesDir: 'sa',
-        images: ['home.jpg', 'analysis.png'],
-        stack: [
-            'React',
-            'Node.js',
-            'Vite',
-            'PyTorch',
-            'TensorFlow',
-            'JavaScript',
-            'Python',
-        ],
-        link: 'https://wsc0tt.github.io/SunArmorAi/',
-        files: 'https://github.com/wsc0tt/SunArmorAi',
-    },
-    {
-        id: 3,
-        title: 'Maritime Assign',
-        description: 'Description for project three',
-        imagesDir: 'ma',
-        images: [
-            'login.png',
-            'forgot.png',
-            'dash.png',
-            'manage.png',
-            'add.png',
-            'board.png',
-            'users.png',
-        ],
-        stack: ['React', 'Node.js', 'Vite', 'Docker', 'Supabase', 'JavaScript'],
+        github: 'https://github.com/DreamTeam131/Medical-App',
     },
     {
         id: 4,
@@ -67,14 +89,8 @@ const projectList = [
         description: 'Description for project four',
         imagesDir: 'gol',
         images: ['gameOfLife.png'],
-        stack: ['Java', 'OpenGL', 'Swing'],
-        files: 'https://github.com/wsc0tt/GameOfLife',
-    },
-    {
-        id: 5,
-        title: 'Other Projects',
-        description: 'Description for project five',
-        stack: ['Various Technologies'],
+        stack: ['Java', 'OpenGL', 'Swing', 'LWJGL', 'GLSL'],
+        github: 'https://github.com/wsc0tt/GameOfLife',
     },
 ]
 
