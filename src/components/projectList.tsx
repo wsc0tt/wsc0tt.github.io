@@ -85,10 +85,12 @@ const projectList = [
     },
     {
         id: 4,
-        title: 'OpenGL Game of Life',
-        description: 'Description for project four',
+        title: "Conway's Game of Life — Java OpenGL",
+        description:
+            "A real-time cellular automaton simulation built with Java and LWJGL. Renders a dynamic grid on the GPU using OpenGL, where each cell lives or dies each generation based on Conway's four rules. Supports adjustable simulation speed, grid dimensions, and customizable color themes.",
         imagesDir: 'gol',
         images: ['gameOfLife.png'],
+        video: 'https://www.youtube.com/embed/XYfafleqi1I?si=qA_PjpHIjWVJD38E',
         stack: ['Java', 'OpenGL', 'Swing', 'LWJGL', 'GLSL'],
         github: 'https://github.com/wsc0tt/GameOfLife',
     },
