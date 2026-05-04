@@ -16,7 +16,9 @@ const Home = () => {
             >
                 <span className='font-sans font-light text-white text-lg lg:text-xl'>
                     My name is William and I'm a Software Engineer specializing
-                    in Full-Stack development + AI/ML.
+                    in embedded systems, AI/ML, and full-stack development. I
+                    recently graduated from Sac State with a B.S. in Computer
+                    Science and a focus on systems-level programming.
                 </span>
             </div>
 
@@ -36,7 +38,7 @@ const Home = () => {
                             shadow-2xl'
             >
                 <span className='font-sans font-light text-white text-lg lg:text-xl'>
-                    I'm actively seeking software engineer positions for 2026!
+                    I'm actively seeking software engineer positions for 2026
                 </span>
             </div>
 
@@ -47,7 +49,7 @@ const Home = () => {
                 <span className='font-sans font-light text-white text-lg lg:text-xl'>
                     Explore my recent work, and don't hesitate to reach out
                     through the contact page. I look forward to connecting with
-                    you!
+                    you.
                 </span>
             </div>
         </div>
