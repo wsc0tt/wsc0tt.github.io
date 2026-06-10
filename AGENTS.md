@@ -38,7 +38,7 @@ Prefer editing that file for:
 - Homepage text
 - About page paragraphs
 - Contact intro/social links
-- Project titles, descriptions, stacks, screenshots, GitHub links, live links, and video embeds
+- Project titles, descriptions, statuses, stacks, logos, screenshots, GitHub links, live links, CTAs, and video embeds
 
 Only edit route/component files when changing behavior, layout, or presentation.
 
@@ -48,7 +48,7 @@ Only edit route/component files when changing behavior, layout, or presentation.
 - `src/components/`: reusable UI components.
 - `src/content/`: structured editable content.
 - `src/assets/`: bundled assets imported by React, including the resume PDF and profile/collage images.
-- `public/`: static assets referenced by URL, especially project screenshots.
+- `public/`: static assets referenced by URL, especially project screenshots and project logos.
 - `.github/workflows/deploy.yml`: GitHub Pages deployment workflow.
 - `dist/`: generated build output. Do not edit manually.
 
@@ -105,3 +105,5 @@ If a local build modifies `dist/`, restore it before finalizing unless the user 
 - Resume asset: `src/assets/William_Scott_Resume.pdf`.
 - Some older unused assets/components may exist; remove only when clearly unrelated to the user's current request.
 - Keep project demo media lightweight enough for GitHub Pages.
+- StockTower uses `public/stocktower/stocktower.svg`, Rubik font text, a live-site link, and an invite-code CTA to `#/contact`.
+- Mars Rover Terrain Risk Classifier is listed under Maritime Assign and currently uses only a GitHub link.

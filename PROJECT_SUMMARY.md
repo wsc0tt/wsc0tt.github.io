@@ -9,7 +9,7 @@ The site content positions William Scott as a software engineer focused on embed
 ## Framework and Libraries
 
 - **Application framework:** React 19 with TypeScript.
-- **Build tool:** Vite 6 using `@vitejs/plugin-react-swc`.
+- **Build tool:** Vite 8 using `@vitejs/plugin-react-swc`.
 - **Routing:** `react-router-dom` 7 with `HashRouter`.
 - **Styling:** Tailwind CSS 3, PostCSS, Autoprefixer, and a small amount of global CSS.
 - **Icons:** `react-icons`, mainly Font Awesome 6 icons.
@@ -29,6 +29,7 @@ The site content positions William Scott as a software engineer focused on embed
 │   ├── ma/
 │   ├── mma/
 │   ├── sa/
+│   ├── stocktower/
 │   └── vite.svg
 ├── src/
 │   ├── assets/
@@ -157,7 +158,7 @@ Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
 - `homeContent`: homepage text panels.
 - `aboutContent`: about-page image alt text and paragraphs.
 - `contactContent`: contact intro text and social links.
-- `projects`: project titles, descriptions, stacks, screenshots, GitHub URLs, live URLs, and video embeds.
+- `projects`: project titles, descriptions, statuses, stacks, logos, screenshots, GitHub URLs, live URLs, CTAs, and video embeds.
 
 ### Portfolio Identity
 
@@ -171,7 +172,16 @@ Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
 
 ### Projects
 
-1. **Maritime Assign**
+1. **StockTower**
+   - Invite-only portfolio intelligence platform for stock holdings.
+   - Supports account creation, CSV portfolio import, PostgreSQL-backed position storage, dashboard views, current market prices, gain/loss calculations, and portfolio value tracking.
+   - Long-term vision includes AI-assisted research reports, investment thesis tracking, news/risk monitoring, watchlists, alerts, valuation analysis, competitor comparisons, and portfolio recommendations.
+   - Stack listed: Next.js App Router, TypeScript, Tailwind CSS, Auth.js, Neon PostgreSQL, Drizzle ORM, Vercel.
+   - Live link exists in data: `https://stocktower.vercel.app`
+   - Invite-code CTA routes to the Contact page.
+   - Logo asset: `public/stocktower/stocktower.svg`
+
+2. **Maritime Assign**
    - Web-based job management platform for the Marine Engineers' Beneficial Association.
    - Replaces a Google Sheets-based job board.
    - Supports job listings, dispatch workflows, role-based access, and real-time visibility.
@@ -180,20 +190,28 @@ Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
    - Public link exists in data: `https://meba.pages.dev/`
    - Video embed exists.
 
-2. **Sun Armor Ai**
+3. **Mars Rover Terrain Risk Classifier**
+   - Machine learning research project for autonomous navigation and terrain risk assessment for planetary rovers.
+   - Uses TensorFlow and transfer learning to classify terrain risk from rover imagery.
+   - Reported 82.6% classification accuracy and 87.6% model-size reduction compared with baseline approaches.
+   - Includes a rule-based heuristic layer that converts terrain classifications into traversability/risk assessments.
+   - Stack listed: Python, TensorFlow, Transfer Learning, NumPy, Deep Learning, Computer Vision.
+   - GitHub: `https://github.com/wsc0tt/ai4mars`
+
+4. **Sun Armor Ai**
    - Skin lesion classification web app using convolutional neural networks.
    - Mentions PyTorch, TensorFlow, ONNX, TensorFlow.js, HuggingFace, React, TypeScript, Python, and client-side inference.
    - GitHub: `https://github.com/wsc0tt/SunArmorAi`
    - Public link exists in data: `https://wsc0tt.github.io/SunArmorAi/`
 
-3. **Mobile Medical App**
+5. **Mobile Medical App**
    - Full-stack/mobile project for a medical organization.
    - William led a team of six other computer science students.
    - Completed in six two-week sprints with evolving client requirements.
    - Stack listed: React Native, Node.js, Supabase, Expo, JavaScript, TypeScript.
    - GitHub: `https://github.com/DreamTeam131/Medical-App`
 
-4. **Conway's Game of Life - Java OpenGL**
+6. **Conway's Game of Life - Java OpenGL**
    - Real-time cellular automaton simulation.
    - Built with Java and LWJGL/OpenGL.
    - Supports adjustable speed, grid dimensions, and color themes.
@@ -214,9 +232,6 @@ Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
 - **Unused components/assets exist.**
   - `Dropdown` and `TextBox` are not referenced by the current route tree.
   - `baker.avif`, `self.jpg`, and `pallette.txt` appear unused in the inspected source.
-
-- **Project link data is partially unused.**
-  - Some project objects include a `link` field, but the `Project` interface and render logic do not expose live project links.
 
 - **EmailJS environment variables are runtime-critical.**
   - Contact form depends on `VITE_EJS_PUBLIC_KEY`, `VITE_EJS_SERVICE_ID`, and `VITE_EJS_TEMPLATE_ID`.
@@ -240,22 +255,20 @@ Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
 
 ## Recommended Improvements
 
-1. Add visible links for project demos when a project object includes `link`.
+1. Remove unused components/assets or mark them as intentional future work.
 
-2. Remove unused components/assets or mark them as intentional future work.
-
-3. Improve accessibility:
+2. Improve accessibility:
    - Add `aria-label` values for icon-only navigation and carousel buttons.
    - Add descriptive `alt` text for carousel screenshots.
    - Consider visible focus states for interactive controls.
 
-4. Update favicon and metadata:
+3. Update favicon and metadata:
    - Replace the default Vite favicon.
    - Add description and social preview metadata for portfolio sharing.
 
-5. Add lightweight verification:
+4. Add lightweight verification:
    - Keep `pnpm run build` passing.
    - Add a small route/component smoke test if the project grows.
    - Run `pnpm run lint` in CI alongside the build.
 
-6. Keep future content edits in `src/content/portfolio.ts` unless a page needs new behavior.
+5. Keep future content edits in `src/content/portfolio.ts` unless a page needs new behavior.
