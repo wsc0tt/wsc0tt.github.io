@@ -39,6 +39,7 @@ The site content positions William Scott as a software engineer focused on embed
 │   │   ├── self.jpg
 │   │   └── self2.jpg
 │   ├── components/
+│   ├── content/
 │   ├── routes/
 │   ├── App.css
 │   ├── App.tsx
@@ -63,8 +64,8 @@ Routes are declared in `src/App.tsx` inside a shared layout with `Header` and `N
   - States he is actively seeking software engineer positions for 2026.
 
 - `/projects` -> `Projects`
-  - Lists portfolio projects from `src/components/projectList.tsx`.
-  - Renders each project with title, description, technology stack, image carousel or YouTube embed, and GitHub link.
+  - Lists portfolio projects from `src/content/portfolio.ts`.
+  - Renders each project with title, description, technology stack, image carousel or YouTube embed, GitHub link, and live-site link when present.
 
 - `/resume` -> `Resume`
   - Displays a PDF viewer via `PdfView`.
@@ -149,6 +150,14 @@ Deployment is handled through GitHub Actions:
 The app uses `vite.config.ts` with `base: '/'`, which fits a user/organization GitHub Pages site at the domain root. The `HashRouter` also reduces static-host routing problems.
 
 ## Project Content and Resume Data
+
+Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
+
+- `profile`: name, title, and profile image alt text.
+- `homeContent`: homepage text panels.
+- `aboutContent`: about-page image alt text and paragraphs.
+- `contactContent`: contact intro text and social links.
+- `projects`: project titles, descriptions, stacks, screenshots, GitHub URLs, live URLs, and video embeds.
 
 ### Portfolio Identity
 
@@ -249,6 +258,4 @@ The app uses `vite.config.ts` with `base: '/'`, which fits a user/organization G
    - Add a small route/component smoke test if the project grows.
    - Run `pnpm run lint` in CI alongside the build.
 
-6. Consider moving portfolio content into structured data.
-    - Project descriptions, stacks, links, and media could live in a typed data file separate from components.
-    - This would make future content edits safer and reduce route/component churn.
+6. Keep future content edits in `src/content/portfolio.ts` unless a page needs new behavior.

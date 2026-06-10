@@ -9,6 +9,7 @@ export default {
             fontFamily: {
                 'sans': ['SUSE', 'sans-serif'],
                 'serif': ['Young Serif', 'serif'],
+                'rubik': ['Rubik', 'sans-serif'],
             },
             textColor: {
                 'spring': '#04F16B',
@@ -34,4 +35,3 @@ export default {
     },
     plugins: [],
 }
-

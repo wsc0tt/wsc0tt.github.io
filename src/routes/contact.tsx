@@ -4,6 +4,7 @@ import { FaLinkedin } from 'react-icons/fa6'
 import { FaEnvelope } from 'react-icons/fa6'
 import React, { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
+import { contactContent } from '../content/portfolio'
 
 const emailConfig = {
     publicKey: import.meta.env.VITE_EJS_PUBLIC_KEY,
@@ -91,17 +92,16 @@ const Contact = () => {
                     className='py-4 px-4 mb-6 lg:mb-8 bg-blue-800 shadow-md font-sans
                                 text-white text-md lg:text-xl text-center'
                 >
-                    To get in touch, please send me a message on linkedin,
-                    discord, or using the form below!
+                    {contactContent.intro}
                 </span>
                 <div className='flex flex-row space-x-6 mb-4 lg:mb-4 justify-center'>
                     <SocialButton
-                        link='https://www.linkedin.com/in/wscottdev/'
+                        link={contactContent.socialLinks.linkedin}
                         Icon={FaLinkedin}
                         text='linkedin'
                     />
                     <SocialButton
-                        link='https://discordapp.com/users/wsc0tt'
+                        link={contactContent.socialLinks.discord}
                         Icon={FaDiscord}
                         text='discord'
                     />

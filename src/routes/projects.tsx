@@ -1,18 +1,12 @@
-import { FaFolderOpen, FaGithub } from 'react-icons/fa6'
-import projectList from '../components/projectList'
+import {
+    FaArrowUpRightFromSquare,
+    FaFolderOpen,
+    FaGithub,
+    FaKey,
+} from 'react-icons/fa6'
 import SocialButton from '../components/socialButton'
 import ImageCarousel from '../components/imageCarousel'
-
-interface Project {
-    id: number
-    title: string
-    description?: string
-    imagesDir?: string
-    images?: string[]
-    stack?: string[]
-    github?: string
-    video?: string
-}
+import { projects, type Project } from '../content/portfolio'
 
 const ProjectDetails = ({ project }: { project: Project }) => {
     return (
@@ -21,9 +15,30 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                 {project.title}
             </span>
 
-            <span className='text-blue-100 text-md mb-2'>
+            {project.status && (
+                <span className='w-fit rounded-full bg-spring px-3 py-1 text-sm font-semibold text-blue-950'>
+                    {project.status}
+                </span>
+            )}
+
+            <span className='text-blue-100 text-md'>
                 {project.description}
             </span>
+
+            {project.logo && (
+                <div className='my-2 flex items-center justify-center gap-3'>
+                    <img
+                        src={project.logo}
+                        alt={project.logoAlt ?? `${project.title} logo`}
+                        className='h-16 w-16 object-contain'
+                    />
+                    {project.logoText && (
+                        <span className='font-rubik text-3xl font-semibold text-white'>
+                            {project.logoText}
+                        </span>
+                    )}
+                </div>
+            )}
 
             {project.stack && (
                 <div className='flex flex-wrap gap-2'>
@@ -51,19 +66,31 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                     images={project.images}
                     imagesDir={project.imagesDir}
                 />
-            ) : (
-                <div className='w-full h-24 bg-blue-900 rounded-lg flex items-center justify-center text-blue-400 text-sm my-2'>
-                    demo coming soon
-                </div>
-            )}
+            ) : null}
 
-            {project.github && (
-                <SocialButton
-                    link={project.github}
-                    Icon={FaGithub}
-                    text='github'
-                />
-            )}
+            <div className='flex flex-wrap gap-3'>
+                {project.github && (
+                    <SocialButton
+                        link={project.github}
+                        Icon={FaGithub}
+                        text='github'
+                    />
+                )}
+                {project.link && (
+                    <SocialButton
+                        link={project.link}
+                        Icon={FaArrowUpRightFromSquare}
+                        text='live site'
+                    />
+                )}
+                {project.cta && (
+                    <SocialButton
+                        link={project.cta.href}
+                        Icon={FaKey}
+                        text={project.cta.text}
+                    />
+                )}
+            </div>
         </div>
     )
 }
@@ -82,7 +109,7 @@ const Projects = () => {
                 </div>
 
                 <div className='bg-blue-600 font-sans flex flex-col divide-y divide-blue-500'>
-                    {projectList.map((project) => (
+                    {projects.map((project) => (
                         <ProjectDetails key={project.id} project={project} />
                     ))}
                 </div>
