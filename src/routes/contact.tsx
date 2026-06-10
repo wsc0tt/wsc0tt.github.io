@@ -5,13 +5,20 @@ import { FaEnvelope } from 'react-icons/fa6'
 import React, { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 
+const emailConfig = {
+    publicKey: import.meta.env.VITE_EJS_PUBLIC_KEY,
+    serviceId: import.meta.env.VITE_EJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EJS_TEMPLATE_ID,
+}
+
+const hasEmailConfig = Object.values(emailConfig).every(Boolean)
+
 const Contact = () => {
     useEffect(() => {
-        if (!import.meta.env.VITE_EJS_PUBLIC_KEY) {
-            console.error('EJS_PUBLIC_KEY is missing!')
+        if (!hasEmailConfig) {
             return
         }
-        emailjs.init(import.meta.env.VITE_EJS_PUBLIC_KEY)
+        emailjs.init(emailConfig.publicKey)
     }, [])
 
     const [messageData, set_messageData] = useState({
@@ -19,6 +26,8 @@ const Contact = () => {
         email: '',
         message: '',
     })
+    const [isSending, setIsSending] = useState(false)
+    const [statusMessage, setStatusMessage] = useState('')
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -31,36 +40,39 @@ const Contact = () => {
 
     const isValidEmail = (email: string) => /\S+@\S+\.\S+/.test(email)
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setStatusMessage('')
 
-        if (!isValidEmail(messageData.email)) {
-            alert('Please enter a valid email address!')
+        if (!hasEmailConfig) {
+            setStatusMessage('Contact form is not configured yet.')
             return
         }
 
-        console.log('Form submitted:', messageData)
+        if (!isValidEmail(messageData.email)) {
+            setStatusMessage('Please enter a valid email address.')
+            return
+        }
 
-        emailjs
-            .send(
-                import.meta.env.VITE_EJS_SERVICE_ID,
-                import.meta.env.VITE_EJS_TEMPLATE_ID,
+        setIsSending(true)
+
+        try {
+            await emailjs.send(
+                emailConfig.serviceId,
+                emailConfig.templateId,
                 messageData
             )
-            .then((result) => {
-                console.log('Email sent:', result.text)
+            setStatusMessage('Message sent.')
+            set_messageData({
+                name: '',
+                email: '',
+                message: '',
             })
-            .catch((error) => {
-                console.error('Email error:', error.text)
-                alert('An error occurred while sending the message...')
-            })
-
-        // clear the form
-        set_messageData({
-            name: '',
-            email: '',
-            message: '',
-        })
+        } catch {
+            setStatusMessage('An error occurred while sending the message.')
+        } finally {
+            setIsSending(false)
+        }
     }
 
     return (
@@ -124,6 +136,11 @@ const Contact = () => {
                         placeholder='leave me a message...'
                         required
                     />
+                    {statusMessage && (
+                        <span className='px-4 pb-2 text-center font-sans text-white text-base md:text-lg'>
+                            {statusMessage}
+                        </span>
+                    )}
 
                     <button
                         className='w-full py-4 rounded-b-2xl font-medium flex
@@ -131,8 +148,9 @@ const Contact = () => {
                         mt-2 text-xl lg:text-2xl font-sans text-white hover:bg-blue-700
                         transition-colors ease-in duration-200 mx-auto'
                         type='submit'
+                        disabled={isSending}
                     >
-                        send message
+                        {isSending ? 'sending...' : 'send message'}
                     </button>
                 </form>
             </div>
