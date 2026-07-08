@@ -2,7 +2,7 @@ import { FaDownload } from 'react-icons/fa6'
 
 const DownloadButton = ({ file }: { file: string }) => {
     return (
-        <a href={file} download='William_Scott_Resume'>
+        <a href={file} download='William_Scott_76.pdf'>
             <button
                 className='w-full py-4 rounded-b-2xl font-medium flex
                         items-center justify-center bg-blue-900 shadow-2xl

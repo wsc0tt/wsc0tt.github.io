@@ -26,31 +26,11 @@ export const profile = {
 
 export const homeContent = [
   {
-    text: 'Hello there 👋',
-    className: 'font-serif font-light text-white text-2xl lg:text-4xl',
+    text: "I'm William Scott, a recent computer science graduate and full-stack software engineer. I enjoy building AI-forward web applications, backend services, and data-driven systems, including agentic and AI-powered tools that are practical, secure, lightweight, efficient, and as performant as possible. This portfolio highlights projects I've built while designing database-backed features, integrating APIs, and collaborating in Agile teams.",
+    className:
+      'font-sans font-normal text-white text-base lg:text-lg leading-relaxed',
     wrapperClassName:
-      'rounded-t-2xl bg-gradient-to-r from-blue-400 to-blue-600 shadow-2xl',
-  },
-  {
-    text: "My name is William and I'm a Software Engineer specializing in embedded systems, AI/ML, and full-stack development. I recently graduated from Sac State with a B.S. in Computer Science and a focus on systems-level programming.",
-    className: 'font-sans font-light text-white text-lg lg:text-xl',
-    wrapperClassName: 'bg-gradient-to-r from-blue-500 to-blue-700 shadow-2xl',
-  },
-  {
-    text: 'This portfolio website showcases my projects and technical skills while providing access to my current resume and recent projects.',
-    className: 'font-sans font-light text-white text-lg lg:text-xl',
-    wrapperClassName: 'bg-gradient-to-r from-blue-600 to-blue-800 shadow-2xl',
-  },
-  {
-    text: "I'm actively seeking software engineer positions for 2026",
-    className: 'font-sans font-light text-white text-lg lg:text-xl',
-    wrapperClassName: 'bg-gradient-to-r from-blue-800 to-blue-900 shadow-2xl',
-  },
-  {
-    text: "Explore my recent work, and don't hesitate to reach out through the contact page. I look forward to connecting with you.",
-    className: 'font-sans font-light text-white text-lg lg:text-xl',
-    wrapperClassName:
-      'rounded-b-2xl bg-gradient-to-r from-blue-900 to-blue-950 shadow-2xl',
+      'rounded-2xl bg-gradient-to-r from-blue-500 to-blue-900 shadow-2xl',
   },
 ]
 
@@ -68,7 +48,7 @@ export const aboutContent = {
 
 export const contactContent = {
   intro:
-    'To get in touch, please send me a message on linkedin, discord, or using the form below!',
+    'To get in touch, please send me a message on linkedin, discord, or using the form below:',
   socialLinks: {
     linkedin: 'https://www.linkedin.com/in/wscottdev/',
     discord: 'https://discordapp.com/users/wsc0tt',

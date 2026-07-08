@@ -33,7 +33,7 @@ The site content positions William Scott as a software engineer focused on embed
 │   └── vite.svg
 ├── src/
 │   ├── assets/
-│   │   ├── William_Scott_Resume.pdf
+│   │   ├── William_Scott_76.pdf
 │   │   ├── baker.avif
 │   │   ├── collage.jpg
 │   │   ├── pallette.txt
@@ -221,8 +221,8 @@ Most editable portfolio copy now lives in `src/content/portfolio.ts`, including:
 
 ### Resume Asset
 
-- Resume file present: `src/assets/William_Scott_Resume.pdf`
-- PDF metadata title: `William_Scott_Resume_C`
+- Resume file present: `src/assets/William_Scott_76.pdf`
+- PDF metadata title: `William_Scott_76`
 - The download page imports this file in `src/routes/resume.tsx`.
 - The embedded viewer and download button now use the same resume asset.
 - Because `pdftotext` is not installed in the local environment, the PDF body text was not extracted during this analysis.

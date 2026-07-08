@@ -1,7 +1,6 @@
 import SocialButton from '../components/socialButton.tsx'
 import { FaDiscord } from 'react-icons/fa6'
 import { FaLinkedin } from 'react-icons/fa6'
-import { FaEnvelope } from 'react-icons/fa6'
 import React, { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import { contactContent } from '../content/portfolio'
@@ -79,17 +78,8 @@ const Contact = () => {
     return (
         <div className='w-screen max-w-screen-lg px-1'>
             <div className='flex flex-col pt-4 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-800'>
-                <div className='flex items-center space-x-4 mb-4 justify-center'>
-                    <span className='font-medium font-serif text-white text-2xl lg:text-3xl'>
-                        contact me
-                    </span>
-                    <div className='flex items-center'>
-                        <FaEnvelope className='text-2xl lg:text-4xl text-spring' />
-                    </div>
-                </div>
-
                 <span
-                    className='py-4 px-4 mb-6 lg:mb-8 bg-blue-800 shadow-md font-sans
+                    className='py-4 px-4 mb-6 lg:mb-8 bg-blue-800 shadow-md font-sans font-normal
                                 text-white text-md lg:text-xl text-center'
                 >
                     {contactContent.intro}
@@ -137,7 +127,7 @@ const Contact = () => {
                         required
                     />
                     {statusMessage && (
-                        <span className='px-4 pb-2 text-center font-sans text-white text-base md:text-lg'>
+                        <span className='px-4 pb-2 text-center font-sans font-normal text-white text-base md:text-lg'>
                             {statusMessage}
                         </span>
                     )}

@@ -84,12 +84,16 @@ Do not use or expose an EmailJS private key in this frontend app.
 
 ## Verification
 
-Before finishing code changes, run:
+Before finalizing accepted code changes or preparing a commit-ready handoff, run:
 
 ```bash
 pnpm run build
 pnpm run lint
 ```
+
+During rapid visual iteration, do not run build and lint after every minor class, copy, spacing, color, or font tweak. Make the requested UI change and wait for the user to accept the batch before running full verification.
+
+Run build and lint immediately when a change could plausibly create a compile or runtime issue, including changes to logic, imports, component structure, routing, TypeScript types, package/config files, or dependency usage.
 
 If dependency changes are made, also run:
 
@@ -102,7 +106,7 @@ If a local build modifies `dist/`, restore it before finalizing unless the user 
 ## Known Notes
 
 - `HashRouter` is intentional for static GitHub Pages routing.
-- Resume asset: `src/assets/William_Scott_Resume.pdf`.
+- Resume asset: `src/assets/William_Scott_76.pdf`.
 - Some older unused assets/components may exist; remove only when clearly unrelated to the user's current request.
 - Keep project demo media lightweight enough for GitHub Pages.
 - StockTower uses `public/stocktower/stocktower.svg`, Rubik font text, a live-site link, and an invite-code CTA to `#/contact`.

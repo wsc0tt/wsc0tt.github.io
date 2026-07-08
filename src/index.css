@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Manrope, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
@@ -30,7 +30,7 @@ nav ul {
 }
 
 nav li {
-    @apply text-lg md:text-3xl lg:text-4xl;
+    @apply text-lg md:text-2xl lg:text-3xl;
 }
 
 nav li:hover {
@@ -48,15 +48,15 @@ body {
 }
 
 p {
-    font-family: 'SUSE', sans-serif;
-    @apply text-base md:text-xl lg:text-2xl;
+    font-family: Manrope, sans-serif;
+    @apply text-base md:text-xl lg:text-2xl font-normal;
     line-height: 1.5;
     color: #292621;
 }
 
 .box {
     @apply flex flex-col max-w-screen-lg h-full mx-2 bg-neutral-200
-    rounded-3xl border-blue-700 border-2 px-6 py-6 w-full justify-center items-center;
+    rounded-3xl px-6 py-6 w-full justify-center items-center;
 }
 
 form {
@@ -64,7 +64,7 @@ form {
 }
 
 form label {
-    @apply text-base md:text-lg lg:text-xl text-white text-left pl-5 font-sans lg:mb-1;
+    @apply text-base md:text-lg lg:text-xl text-white text-left pl-5 font-sans font-normal lg:mb-1;
 }
 
 .form {

@@ -14,7 +14,7 @@ const Header = () => {
                 <span className='font-serif text-3xl leading-none md:text-4xl lg:text-6xl text-white'>
                     {profile.name}
                 </span>
-                <span className='font-sans leading-none font-medium text-2xl md:text-4xl lg:text-5xl text-center text-white'>
+                <span className='font-sans leading-none font-medium text-2xl md:text-3xl lg:text-4xl text-center text-white'>
                     {profile.title}
                 </span>
             </div>

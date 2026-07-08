@@ -7,7 +7,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['SUSE', 'sans-serif'],
+                'sans': ['Manrope', 'sans-serif'],
                 'serif': ['Young Serif', 'serif'],
                 'rubik': ['Rubik', 'sans-serif'],
             },
