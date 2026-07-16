@@ -37,11 +37,11 @@ export const homeContent = [
 export const aboutContent = {
   imageAlt: 'William Scott collage',
   paragraphs: [
-    "I'm seeking my first software engineering role at a tech company. I'm open to various specializations but want to write clean, efficient code that makes an impact.",
-    "Growing up in the Pacific Northwest, I initially pursued general engineering but realized it wasn't my passion. After years in construction-working as a laborer and eventually foreman-I discovered my love for software development while taking a computer science course during 12-hour work days.",
-    'This transition revealed how much of my creativity was untapped in construction. I found I could successfully learn, code, and apply my existing problem-solving skills to software development.',
-    "Now in my senior year at Sacramento State, I'm excited about software's potential for impact and the increasing usefulness of Ai and ready to work on solving real-world problems.",
-    'Thank you for reading my story. I look forward to hearing from you.',
+    "I'm a software engineer and Sacramento State graduate with a Bachelor of Science in Computer Science and a 3.8 GPA. I'm seeking an opportunity to build thoughtful, reliable software that makes a real impact.",
+    "Growing up in the Pacific Northwest, I initially pursued general engineering but realized it wasn't the right fit. After years in construction—first as a laborer and later as a foreman—I discovered software development while taking a computer science course alongside 12-hour work days.",
+    'That transition showed me how much I enjoy learning complex systems, solving practical problems, and turning ideas into working software. It also strengthened the persistence, communication, and ownership I bring to collaborative work.',
+    "I'm open to a range of software engineering specializations, especially work involving web applications, backend services, data-driven systems, and AI-powered tools. I like building lightweight, fast, performant software with clean, open user interfaces. I care about writing clean, efficient code and continuing to grow alongside a strong engineering team.",
+    'Thank you for reading my story. I look forward to connecting.',
     'William',
   ],
 }
@@ -56,6 +56,22 @@ export const contactContent = {
 }
 
 export const projects: Project[] = [
+  {
+    id: 7,
+    title: 'League Winner',
+    description:
+      'League Winner is a mobile-first fantasy football draft companion built to help managers make quick, explainable draft decisions. It combines consensus ADP, league-aware auction values, normalized season projections, player details, and head-to-head comparisons. Built with Expo and React Native for mobile, plus Next.js and React for web and APIs, it uses TypeScript, Tailwind, NativeWind, Zod, and a shared deterministic scoring engine. The Next.js backend serves validated player data from checked-in market, identity, and projection snapshots, while the Expo app accesses it over HTTPS. Current features include rankings, position filters, custom league scoring, projected-points sorting, player comparisons, and projection details. Planned work includes live draft assistance, AI recommendations, saved leagues and accounts, source-health reporting, and draft-history persistence. League Winner is planned for release on mobile and web before the 2026 NFL season.',
+    stack: [
+      'Expo',
+      'React Native',
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'NativeWind',
+      'Zod',
+    ],
+  },
   {
     id: 5,
     title: 'StockTower',
