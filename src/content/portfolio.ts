@@ -24,16 +24,6 @@ export const profile = {
   imageAlt: 'William Scott',
 }
 
-export const homeContent = [
-  {
-    text: "I'm William Scott, a recent computer science graduate and full-stack software engineer. I enjoy building AI-forward web applications, backend services, and data-driven systems, including agentic and AI-powered tools that are practical, secure, lightweight, efficient, and as performant as possible. This portfolio highlights projects I've built while designing database-backed features, integrating APIs, and collaborating in Agile teams.",
-    className:
-      'font-sans font-normal text-white text-base lg:text-lg leading-relaxed',
-    wrapperClassName:
-      'rounded-2xl bg-gradient-to-r from-blue-500 to-blue-900 shadow-2xl',
-  },
-]
-
 export const aboutContent = {
   imageAlt: 'William Scott collage',
   paragraphs: [

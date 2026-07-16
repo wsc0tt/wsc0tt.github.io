@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import {
-    FaHouse,
     FaFolder,
     FaEnvelope,
     FaUser,
@@ -10,8 +9,7 @@ import {
 import { useLocation } from 'react-router-dom'
 
 const navItems = [
-    { path: '/', label: 'home', Icon: FaHouse },
-    { path: '/projects', label: 'projects', Icon: FaFolder },
+    { path: '/', label: 'projects', Icon: FaFolder },
     { path: '/resume', label: 'resume', Icon: FaFileLines },
     { path: '/about', label: 'about', Icon: FaUser },
     { path: '/contact', label: 'contact', Icon: FaEnvelope },

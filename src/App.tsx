@@ -2,7 +2,6 @@ import './App.css'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/header.tsx'
 import Navbar from './components/navbar.tsx'
-import Home from './routes/home.tsx'
 import Projects from './routes/projects.tsx'
 import Resume from './routes/resume.tsx'
 import About from './routes/about.tsx'
@@ -15,7 +14,7 @@ const App = () => {
                 <Header />
                 <Navbar />
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Projects />} />
                     <Route path='/projects' element={<Projects />} />
                     <Route path='/resume' element={<Resume />} />
                     <Route path='/about' element={<About />} />
