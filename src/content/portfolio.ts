@@ -50,7 +50,7 @@ export const projects: Project[] = [
     id: 7,
     title: 'League Winner',
     description:
-      'League Winner is a mobile-first fantasy football draft companion built to help managers make quick, explainable draft decisions. It combines consensus ADP, league-aware auction values, normalized season projections, player details, and head-to-head comparisons. Built with Expo and React Native for mobile, plus Next.js and React for web and APIs, it uses TypeScript, Tailwind, NativeWind, Zod, and a shared deterministic scoring engine. The Next.js backend serves validated player data from checked-in market, identity, and projection snapshots, while the Expo app accesses it over HTTPS. Current features include rankings, position filters, custom league scoring, projected-points sorting, player comparisons, and projection details. Planned work includes live draft assistance, AI recommendations, saved leagues and accounts, source-health reporting, and draft-history persistence. League Winner is planned for release on mobile and web before the 2026 NFL season.',
+      'League Winner is a mobile-first fantasy football draft companion with saved, league-specific settings and Salary Cap support. It combines AI player outlooks and comparisons with rankings and projections to clarify draft decisions. A live draft companion is planned for the mobile and web release before the 2026 NFL season.',
     stack: [
       'Expo',
       'React Native',
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     logoAlt: 'StockTower logo',
     logoText: 'StockTower',
     description:
-      'StockTower is an in-progress portfolio intelligence platform designed to help investors monitor, analyze, and understand their stock holdings. Users can create an account, upload portfolio positions via CSV, and view holdings in a centralized dashboard with current market prices, gain/loss calculations, and portfolio value tracking. The long-term vision is AI-assisted research, investment thesis tracking, material news and risk monitoring, watchlists, alerts, valuation analysis, competitor comparisons, and portfolio recommendations. I designed and developed the application architecture, authentication system, database schema, portfolio management workflow, and market data integration while using AI-assisted development tools to accelerate implementation without giving up ownership of technical design decisions.',
+      'StockTower is an invite-only platform for understanding stock portfolios. Investors can upload positions, track performance, and review their holdings from one dashboard. Future releases will add AI-assisted research, thesis tracking, news monitoring, alerts, and valuation tools.',
     stack: [
       'Next.js App Router',
       'TypeScript',
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     id: 3,
     title: 'Maritime Assign',
     description:
-      "Maritime Assign is a web-based job management platform built for the Marine Engineers' Beneficial Association (MEBA) to replace their outdated Google Sheets-based job board. The application centralizes job listings, streamlines dispatch workflows, and provides secure role-based access for union members, dispatchers, and administrators. It was created to improve reliability, security, efficiency, and real-time visibility for a nationwide maritime job distribution system.",
+      "Maritime Assign is a job management platform built for the Marine Engineers' Beneficial Association. It centralizes listings and dispatch workflows with role-based access for union members, dispatchers, and administrators. The system replaces a spreadsheet-based process with a more reliable, secure, and transparent nationwide job board.",
     imagesDir: 'ma',
     images: [
       'login.png',
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     id: 6,
     title: 'Mars Rover Terrain Risk Classifier',
     description:
-      'Mars Rover Terrain Risk Classifier is a machine learning research project focused on autonomous navigation for planetary exploration vehicles. The project explores how deep learning can evaluate terrain safety and assist rovers with real-time path planning decisions in unfamiliar environments. Using TensorFlow and transfer learning, the system was trained to classify terrain risk levels from rover imagery. The final model achieved 82.6% classification accuracy while reducing model size by 87.6% compared to baseline approaches, improving suitability for resource-constrained rover hardware. The project also introduced a rule-based heuristic layer that converts terrain classifications into actionable traversability and risk assessments, with findings documented in an accompanying technical research paper.',
+      'Mars Rover Terrain Risk Classifier explores autonomous navigation for planetary vehicles. It classifies terrain imagery and converts the results into actionable risk assessments. The final model achieved 82.6% accuracy while reducing model size by 87.6% compared with baseline approaches.',
     stack: [
       'Python',
       'TensorFlow',
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     id: 2,
     title: 'Sun Armor Ai',
     description:
-      'A web app that uses convolutional neural networks to classify skin lesions from uploaded images. Trained on dermatology datasets using PyTorch and TensorFlow, with client-side inference for fast results. Built with React and TypeScript, and published open-source for developers and researchers.',
+      'Sun Armor AI is a web app that classifies skin lesions from uploaded images. Its neural network runs in the browser for fast, private results. The project is open source for developers and researchers.',
     imagesDir: 'sa',
     images: ['home.jpg', 'analysis.png'],
     stack: [
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     id: 1,
     title: 'Mobile Medical App',
     description:
-      'This project was my first exposure to Full-stack and mobile development, where I led a team of 6 other computer science students in creating a real product for a medical organization. The project was completed in 6 2-week sprints, working with evolving client requirements and feature requests.',
+      'Mobile Medical App is a full-stack patient management tool created for a medical organization. I led six other computer science students through six two-week sprints while adapting to evolving client requirements. The project gave me my first experience leading a team and shipping a real mobile product.',
     imagesDir: 'mma',
     images: [
       'landingPage.png',
@@ -187,7 +187,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Conway's Game of Life - Java OpenGL",
     description:
-      "A real-time cellular automaton simulation built with Java and LWJGL. Renders a dynamic grid on the GPU using OpenGL, where each cell lives or dies each generation based on Conway's four rules. Supports adjustable simulation speed, grid dimensions, and customizable color themes.",
+      "Conway's Game of Life is a real-time cellular automaton rendered on the GPU. Each cell evolves by Conway's four rules to create complex patterns from simple behavior. Users can adjust the simulation speed, grid dimensions, and color theme.",
     imagesDir: 'gol',
     images: ['gameOfLife.png'],
     video: 'https://www.youtube.com/embed/XYfafleqi1I?si=qA_PjpHIjWVJD38E',
