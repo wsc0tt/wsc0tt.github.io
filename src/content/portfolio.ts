@@ -50,7 +50,7 @@ export const projects: Project[] = [
     id: 7,
     title: 'League Winner',
     description:
-      'League Winner is a mobile-first fantasy football draft companion with saved, league-specific settings and Salary Cap support. It combines AI player outlooks and comparisons with rankings and projections to clarify draft decisions. A live draft companion is planned for the mobile and web release before the 2026 NFL season.',
+      'League Winner is a mobile-first fantasy football draft companion for fast, explainable decisions. It pairs consensus ADP and league-aware auction values with normalized projections, game logs, injury data, head-to-head comparisons, and AI-written player outlooks grounded in current reporting. Additionally, League Winner includes a live drafting companion feature called War Room that recommends picks from positional scarcity and auto-adjusts player values based on league budgets. Next.js owns the API and a shared deterministic scoring engine, Expo and React Native drive the mobile client, and Clerk and Neon Postgres back accounts and saved leagues. Player data refreshes daily from public sources. Live on web; mobile to follow.',
     stack: [
       'Expo',
       'React Native',
@@ -61,6 +61,7 @@ export const projects: Project[] = [
       'NativeWind',
       'Zod',
     ],
+    link: 'https://league-winner-ten.vercel.app',
   },
   {
     id: 5,
